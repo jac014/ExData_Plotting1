@@ -5,10 +5,10 @@ rm(powerall)
 ##Set date format
 powercons$Date <- strptime(paste(powercons$Date,powercons$Time), "%d/%m/%Y %H:%M:%S")
 ##Plot and output
-par(bg=NA)
-plot(x = powercons$Date, y = powercons$Sub_metering_1, type = "l", ylab = "Energy sub metering",cex.lab = .75, cex.axis = .75)
+par(bg=NA, mar = c(2,4,2,1))
+plot(x = powercons$Date, y = powercons$Sub_metering_1, type = "l", ylab = "Energy sub metering",cex.lab = .75, cex.axis = .75, xlab = "")
 lines(x= powercons$Date, y = powercons$Sub_metering_2, type="l", col="red")
 lines(x= powercons$Date, y = powercons$Sub_metering_3, type="l", col="blue")
 legend("topright", lty = "solid", col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = .75)
-dev.copy(png, file = "plot2.png", width=480, height=480)
+dev.copy(png, file = "plot3.png", width=480, height=480)
 dev.off()
