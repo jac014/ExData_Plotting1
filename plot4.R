@@ -5,7 +5,7 @@ rm(powerall)
 ##Set date format
 powercons$Date <- strptime(paste(powercons$Date,powercons$Time), "%d/%m/%Y %H:%M:%S")
 ##Plot and output
-par(bg=NA, mfcol = c(2, 2))
+par(bg=NA, mfcol = c(2, 2), mar = c(5,4,2,2))
 with(powercons, {
   plot(powercons$Date, powercons$Global_active_power, type = "l", ylab = "Global Active Power", xlab = "",cex.lab = .75, cex.axis = .75)
   plot(x = powercons$Date, y = powercons$Sub_metering_1, type = "l", ylab = "Energy sub metering",cex.lab = .75, cex.axis = .75, xlab = "")
